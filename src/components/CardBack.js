@@ -1,13 +1,9 @@
-import { Card, CardBody } from 'reactstrap';
 import '../App.css';
 
-const CardBack = (props) => {
+const CardBack = () => {
     return (
         <div className='cardBack'>
         </div>
-        // <Card>
-        //         This is going to be the card back.
-        // </Card>
     );
 };
 

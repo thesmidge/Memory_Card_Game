@@ -13,15 +13,22 @@
 
 .cardBack {
     background-color: #DC9E82;
-    padding-top: 100%;
+    /* padding-top: 100%; */
     margin-top: 25px;
     border: 5px solid #C16E70;
     border-radius: 10px;
+    aspect-ratio: 1/1;
 }
 
 .cardImage {
-    padding-top: 100%;
+    /* padding-top: 100%; */
     margin-top: 25px;
-    border: 5px solid #C16E70;
+    border: 5px solid #030027;
     border-radius: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
 }
