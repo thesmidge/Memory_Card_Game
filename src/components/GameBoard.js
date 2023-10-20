@@ -1,13 +1,79 @@
+import { Container, Row, Col } from 'reactstrap';
 import CardBack from "./CardBack";
 
 const GameBoard = () => {
     return (
-        <>
-            <p>
-                This will be the game board.
-            </p>
-            <CardBack/>
-        </>
+        <Container>
+            <h1>This is the game board</h1>
+            <Row>
+                <Col>
+                    <CardBack/>
+                </Col>
+                <Col>
+                    <CardBack/>
+                </Col>
+                <Col>
+                    <CardBack/>
+                </Col>
+                <Col>
+                    <CardBack/>
+                </Col>
+                <Col>
+                    <CardBack/>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <CardBack/>
+                </Col>
+                <Col>
+                    <CardBack/>
+                </Col>
+                <Col>
+                    <CardBack/>
+                </Col>
+                <Col>
+                    <CardBack/>
+                </Col>
+                <Col>
+                    <CardBack/>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <CardBack/>
+                </Col>
+                <Col>
+                    <CardBack/>
+                </Col>
+                <Col>
+                    <CardBack/>
+                </Col>
+                <Col>
+                    <CardBack/>
+                </Col>
+                <Col>
+                    <CardBack/>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <CardBack/>
+                </Col>
+                <Col>
+                    <CardBack/>
+                </Col>
+                <Col>
+                    <CardBack/>
+                </Col>
+                <Col>
+                    <CardBack/>
+                </Col>
+                <Col>
+                    <CardBack/>
+                </Col>
+            </Row>
+        </Container>
     );
 };
 
