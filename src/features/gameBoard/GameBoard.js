@@ -1,6 +1,5 @@
 import { Container, Row, Col } from 'reactstrap';
-import CardBack from "./CardBack";
-import CardImage from './CardImage';
+import MemoryCard from "../memoryCards/MemoryCard";
 
 const GameBoard = () => {
     return (
@@ -8,70 +7,70 @@ const GameBoard = () => {
             <h1>This is the game board</h1>
             <Row>
                 <Col>
-                    <CardImage />
+                    <MemoryCard />
                 </Col>
                 <Col>
-                    <CardBack />
+                    <MemoryCard />
                 </Col>
                 <Col>
-                    <CardBack />
+                    <MemoryCard />
                 </Col>
                 <Col>
-                    <CardBack />
+                    <MemoryCard />
                 </Col>
                 <Col>
-                    <CardBack />
-                </Col>
-            </Row>
-            <Row>
-                <Col>
-                    <CardBack />
-                </Col>
-                <Col>
-                    <CardBack />
-                </Col>
-                <Col>
-                    <CardBack />
-                </Col>
-                <Col>
-                    <CardBack />
-                </Col>
-                <Col>
-                    <CardBack />
+                    <MemoryCard />
                 </Col>
             </Row>
             <Row>
                 <Col>
-                    <CardBack />
+                    <MemoryCard />
                 </Col>
                 <Col>
-                    <CardBack />
+                    <MemoryCard />
                 </Col>
                 <Col>
-                    <CardBack />
+                    <MemoryCard />
                 </Col>
                 <Col>
-                    <CardBack />
+                    <MemoryCard />
                 </Col>
                 <Col>
-                    <CardBack />
+                    <MemoryCard />
                 </Col>
             </Row>
             <Row>
                 <Col>
-                    <CardBack />
+                    <MemoryCard />
                 </Col>
                 <Col>
-                    <CardBack />
+                    <MemoryCard />
                 </Col>
                 <Col>
-                    <CardBack />
+                    <MemoryCard />
                 </Col>
                 <Col>
-                    <CardBack />
+                    <MemoryCard />
                 </Col>
                 <Col>
-                    <CardBack />
+                    <MemoryCard />
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <MemoryCard />
+                </Col>
+                <Col>
+                    <MemoryCard />
+                </Col>
+                <Col>
+                    <MemoryCard />
+                </Col>
+                <Col>
+                    <MemoryCard />
+                </Col>
+                <Col>
+                    <MemoryCard />
                 </Col>
             </Row>
         </Container>

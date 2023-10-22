@@ -1,4 +1,5 @@
-import { CATS } from '../app/data/CATS';
+import { CATS } from '../../app/shared/CATS';
+import { baseCatUrl, baseDogUrl } from '../../app/shared/baseUrls';
 import '../App.css';
 
 const CardImage = (props) => {
