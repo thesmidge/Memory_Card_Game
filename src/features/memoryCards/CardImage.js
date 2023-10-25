@@ -1,6 +1,6 @@
 import { CATS } from '../../app/shared/CATS';
 import { baseCatUrl, baseDogUrl } from '../../app/shared/baseUrls';
-import '../App.css';
+import '../../App.css';
 
 const CardImage = (props) => {
     const catUrl = 'https://api.thecatapi.com/v1/images/';

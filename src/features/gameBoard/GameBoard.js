@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import { Container, Row, Col } from 'reactstrap';
 import MemoryCard from "../memoryCards/MemoryCard";
 
@@ -5,7 +6,22 @@ const GameBoard = () => {
     return (
         <Container>
             <h1>This is the game board</h1>
-            <Row>
+            <Row className='row-cols-5'>
+                <Col>
+                    <MemoryCard imageId={id}/>
+                </Col>
+                <Col>
+                    <MemoryCard />
+                </Col>
+                <Col>
+                    <MemoryCard />
+                </Col>
+                <Col>
+                    <MemoryCard />
+                </Col>
+                <Col>
+                    <MemoryCard />
+                </Col>
                 <Col>
                     <MemoryCard />
                 </Col>
@@ -21,8 +37,6 @@ const GameBoard = () => {
                 <Col>
                     <MemoryCard />
                 </Col>
-            </Row>
-            <Row>
                 <Col>
                     <MemoryCard />
                 </Col>
@@ -38,25 +52,6 @@ const GameBoard = () => {
                 <Col>
                     <MemoryCard />
                 </Col>
-            </Row>
-            <Row>
-                <Col>
-                    <MemoryCard />
-                </Col>
-                <Col>
-                    <MemoryCard />
-                </Col>
-                <Col>
-                    <MemoryCard />
-                </Col>
-                <Col>
-                    <MemoryCard />
-                </Col>
-                <Col>
-                    <MemoryCard />
-                </Col>
-            </Row>
-            <Row>
                 <Col>
                     <MemoryCard />
                 </Col>
