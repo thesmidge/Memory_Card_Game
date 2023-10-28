@@ -17,7 +17,7 @@ export const fetchCatImage = createAsyncThunk(
 // I will need to add a call to fetchCatImage() in a loop over the catsArray to the App(). Then I will build/shuffle the memory card deck in either the GameBoard() or GamePage(). Also, according to the Redux documentation, I don't actually need to use useEffect with useDispatch, but it can help React to not get mad when using useDispatch.
 
 const initialState = {
-    catsArray: CATS,
+    catsArray: CATS, // Plan to implement backend similar to json-server used for nucampsite, if possible
     catImages: [],
     isLoading: true,
     errorMessage: ''

@@ -5,15 +5,14 @@ import { fetchCatImage } from './features/cats/catsSlice';
 import './App.css';
 
 function App() {
+    const cats = useSelector((state) => state.cats.catsArray)
     const dispatch = useDispatch();
 
     useEffect(() => {
-        for (let cat of state.cats.catsArray) {
+        for (let cat of cats) {
             dispatch(fetchCatImage(cat));
         }
     }, [dispatch]);
-
-    useSelector((state) => state.memoryCards)
 
     return (
         <div className="App">
