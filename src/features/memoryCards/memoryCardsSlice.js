@@ -1,16 +1,7 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { baseCatUrl, baseDogUrl } from '../../app/shared/baseUrls';
-import { fetchCatImage } from "../cats/catsSlice";
-
-// export const fetchCat = createAsyncThunk(
-//     'memoryCards/fetchCat',
-//     async () => {
-//         const response = await fetch(baseCatUrl + )
-//     }
-// )
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    memoryCardArray: [],
+    memoryCardsArray: [],
     // difficultyLevel?
     isLoading: true,
     errorMessage: ''
@@ -31,8 +22,8 @@ const memoryCardsSlice = createSlice({
             console.log(cardIndexArray, shuffledCardIndexArray, normalCardIndexArray);
 
             for (let index of normalCardIndexArray) {
-                const memoryCard = useSelector((state) => state.cats.catImagesArray[index]);
-                state.memoryCardArray.push(memoryCard);
+                const memoryCard = useSelector((state) => state.cats.catsArray[index].image);
+                state.memoryCardsArray.push(memoryCard);
             };
         }
     }

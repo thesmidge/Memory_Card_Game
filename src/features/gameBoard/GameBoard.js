@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Container, Row, Col } from 'reactstrap';
-import MemoryCard from "../memoryCards/MemoryCard";
+import MemoryCard from '../memoryCards/MemoryCard';
 
 const GameBoard = () => {
     return (
