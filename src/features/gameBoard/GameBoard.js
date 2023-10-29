@@ -12,7 +12,7 @@ const GameBoard = () => {
                 {memoryCards.map((memoryCard) => {
                     return (
                         <Col>
-                            <MemoryCard imageId={memoryCard.id}/>
+                            <MemoryCard image={memoryCard}/>
                         </Col>
                     );
                 })}
