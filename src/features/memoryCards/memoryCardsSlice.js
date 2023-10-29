@@ -14,7 +14,13 @@ const memoryCardsSlice = createSlice({
     name: 'memoryCards',
     initialState,
     reducers: {
-        /* I have more detailed explanations above each section of the reducer below, but ultimately I am trying to create an array of 10 random integers between the numbers 0 and 21 that will serve as index references to select 10 random cat images from the catImagesArray each time the game is played. I am calling this function in the GamePage. I know that the GamePage itself is loading properly because the words "This is the game board" show up on the screen when I run the code. However, this function doesn't seem to be working properly when the GamePage loads because 1) no cards show up on the screen, and 2) when I check the console, the memoryCardsArray is empty. */
+        /* I have more detailed explanations above each section of the reducer below, but ultimately I am trying to
+        create an array of 10 random integers between the numbers 0 and 21 that will serve as index references to select 10
+        random cat images from the catImagesArray each time the game is played. I am calling this function in the
+        GamePage. I know that the GamePage itself is loading properly because the words "This is the game board" show
+        up on the screen when I run the code. However, this function doesn't seem to be working properly when the
+        GamePage loads because 1) no cards show up on the screen, and 2) when I check the console, the memoryCardsArray is
+        empty. */
         shuffleMemoryCards: (state) => {
             /* The below array will ultimately become a randomized array that will be used as index
             references to select random cat images from the catImagesArray. */
