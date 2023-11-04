@@ -11,13 +11,12 @@ const GameBoard = () => {
     ]);
     console.log('Beginning index array: ' + cardIndexArray);
 
-    setCardIndexArray(cardIndexArray.map((card) => ({
-        sort: Math.random(),
-        value: card
-    }
-    .sort((card, b) => card.sort - b.sort)
-    .map((card) => card.value);
-    )));
+    const shuffleArray = (array) => {
+        const shuffledArray = array.toSorted(() => 0.5 - Math.random());
+        return shuffleArray;
+    };
+
+    setCardIndexArray(shuffleArray(cardIndexArray));
 
     console.log('Shuffled index array: ' + cardIndexArray);
 
