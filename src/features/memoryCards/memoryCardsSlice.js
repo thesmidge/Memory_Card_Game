@@ -1,6 +1,8 @@
 import { useSelector } from 'react-redux';
 import { createSlice } from '@reduxjs/toolkit';
 
+/* It's possible that this memoryCardsSlice will go away entirely. I think I can use local state in either the GameBoard or GamePage component to create and manage my memoryCardsArray. Although, I may need some sort of global state to set and manage the difficulty level. So maybe it would be the gameSettingsSlice, or something like that. */
+
 // When I implement a back end, I think I will need to create a fetchAPI Thunk for building the memory card deck, or at least for fetching individual card data
 
 const initialState = {
@@ -32,7 +34,7 @@ const memoryCardsSlice = createSlice({
             const truncatedCardIndexArray = shuffledCardIndexArray.splice(10);
             /* This next part should be pushing 2 copies of the above array to the memoryCardsArray in order to
             have 2 copies of each cat image. */
-            state.memoryCardsArray.push([...truncatedCardIndexArray, ...truncatedCardIndexArray]);
+            state.memoryCardsArray = [...truncatedCardIndexArray, ...truncatedCardIndexArray];
             /* This final piece is simply to randomize the order of the final card index selection so that the final
             images will be displayed in a random order on the GameBoard. */
             state.memoryCardsArray.sort(() => 0.5 - Math.random());

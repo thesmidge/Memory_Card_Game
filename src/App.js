@@ -6,6 +6,7 @@ import './App.css';
 
 function App() {
     const cats = useSelector((state) => state.cats.catsArray);
+    const catImages = useSelector((state) => state.cats.catImagesArray);
     const dispatch = useDispatch();
 
     /* Below, I am iterating over my catsArray and calling my fetch API for each one individually. When the fetch resolves,
@@ -16,11 +17,10 @@ function App() {
     think that's because the individual fetch calls are resolving at different speeds and are therefore being pushed to the
     catsImagesArray out of order. So I think that I need to make my loop asynchronous as well, but I haven't come up with a
     good way to do that yet.*/
-    useEffect(() => {
-        for (let cat of cats) {
-            dispatch(fetchCatImage(cat));
-        };
-    }, [dispatch]);
+    // useEffect(() => {
+    //     console.log('useEffect called');
+    //     dispatch(fetchCatImage(cats, catImages));
+    // }, [dispatch]);
 
     return (
         <div className="App">
