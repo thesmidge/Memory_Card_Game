@@ -34,17 +34,17 @@ I'll need to create a custom hook (stored in a hooks folder?) for my API fetch. 
 //     }
 // );
 
-// export const fetchCatImage = createAsyncThunk(
-//     'cats/fetchImage',
-//     async (props) => {
-//         const response = await fetch(baseCatUrl + props.id);
-//         if (!response.ok) {
-//             return Promise.reject('Unable to fetch, status: ' + response.status);
-//         }
-//         const data = await response.json();
-//         return { ...props, imageUrl: data.url };
-//     }
-// );
+export const fetchCatImage = createAsyncThunk(
+    'cats/fetchImage',
+    async (props) => {
+        const response = await fetch(baseCatUrl + props.id);
+        if (!response.ok) {
+            return Promise.reject('Unable to fetch, status: ' + response.status);
+        }
+        const data = await response.json();
+        return { ...props, imageUrl: data.url };
+    }
+);
 
 const initialState = {
     catsArray: CATS, // Plan to implement backend similar to json-server used for nucampsite, if possible
