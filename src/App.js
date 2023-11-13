@@ -5,9 +5,10 @@ import { fetchCatImage } from './features/cats/catsSlice';
 import './App.css';
 
 function App() {
-    const cats = useSelector((state) => state.cats.catsArray);
-    const catImages = useSelector((state) => state.cats.catImagesArray);
-    const dispatch = useDispatch();
+    // const cats = useSelector((state) => state.cats.catsArray);
+    // console.log(cats);
+    // const catImages = useSelector((state) => state.cats.catImagesArray);
+    // const dispatch = useDispatch();
 
     /* Below, I am iterating over my catsArray and calling my fetch API for each one individually. When the fetch resolves,
     each cat object is then being pushed to my catImagesArray, along with the imageUrl returned by the fetch.
