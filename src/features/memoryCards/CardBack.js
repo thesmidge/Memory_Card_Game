@@ -1,8 +1,10 @@
 import '../../App.css';
 
-const CardBack = () => {
+const CardBack = (props) => {
     return (
-        <div className='cardBack'>
+        <div
+            className='cardBack'
+            onClick={(e) => props.onCardClick(e)}>
         </div>
     );
 };

@@ -1,21 +1,25 @@
 import CardBack from './CardBack';
 import CardImage from './CardImage';
-import { fetchCatImage } from '../cats/catsSlice';
 import { useSelector } from 'react-redux';
 import { useFetchImage } from '../../hooks/useFetchImage';
+import { useState } from 'react';
 
-const MemoryCard = ({ index }) => {
-    const cats = useSelector((state) => state.cats.catsArray);
-    // console.log(cats);
-    const cat = cats[index];
-    // console.log(cat);
+const MemoryCard = ({ index, onCardClick }) => {
+    const [cardFlipped, setCardFlipped] = useState(false);
+    const [cardMatched, setCardMatched] = useState(false);
+    const cat = useSelector((state) => state.cats.catsArray[index]);
 
     const cardImageUrl = useFetchImage('cat', cat);
-    const cardDetail = { ...cat, imageUrl: cardImageUrl}
+    const cardDetail = { ...cat, imageUrl: cardImageUrl};
 
+    if (!cardFlipped) {
+        return (
+            <CardBack
+                onCardClick={() => setCardFlipped(!cardFlipped)}
+            />
+        );
+    }
     return (
-        // <CardBack />
-        // Add conditional rendering for CardImage
         <CardImage
             id={cardDetail.id}
             name={cardDetail.name}

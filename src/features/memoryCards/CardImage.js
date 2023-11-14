@@ -10,7 +10,7 @@ const CardImage = (props) => {
 
     return (
         <div className='cardImage'>
-            <img src={imgurl} alt='Cat or Dog Image' />
+            <img src={imgurl} alt='' />
         </div>
     );
 };
