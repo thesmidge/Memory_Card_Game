@@ -16,6 +16,7 @@ export const useFetchImage = (petType, props) => {
     useEffect(() => {
         fetchImage();
     }, []);
+    console.log('fetchImage called')
 
     return imageUrl;
 };
