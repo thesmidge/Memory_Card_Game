@@ -1,21 +1,36 @@
-import { useSelector } from 'react-redux';
-import { createSlice } from '@reduxjs/toolkit';
-
-/* It's possible that this memoryCardsSlice will go away entirely. I think I can use local state in either the GameBoard or GamePage component to create and manage my memoryCardsArray. Although, I may need some sort of global state to set and manage the difficulty level. So maybe it would be the gameSettingsSlice, or something like that. */
+import { createSlice } from "@reduxjs/toolkit";
 
 // When I implement a back end, I think I will need to create a fetchAPI Thunk for building the memory card deck, or at least for fetching individual card data
 
 const initialState = {
-    memoryCardsArray: [],
+    flippedCards: [],
+    matchedCards: [],
+    // memoryCardsArray: [],
     // difficultyLevel?
-    isLoading: true,
     errorMessage: ''
 };
 
 const memoryCardsSlice = createSlice({
     name: 'memoryCards',
     initialState,
-    reducers: {}
+    reducers: {
+        addFlippedCard: (state, action) => {
+            const flippedCard = action.payload;
+            state.flippedCards.push(flippedCard);
+        },
+        clearFlippedCards: (state) => {
+            state.flippedCards = [];
+        },
+        // There will always be two matched cards being added at a time, so I may need to alter this method, depending on how I end up calling it.
+        addMatchedCard: (state, action) => {
+            const matchedCard = { ...action.payload };
+            state.matchedCards.push(matchedCard);
+        }
+    }
 });
 
 export const memoryCardsReducer = memoryCardsSlice.reducer;
+
+export const { addFlippedCard } = memoryCardsSlice.actions;
+export const { clearFlippedCards } = memoryCardsSlice.actions;
+export const { addMatchedCard } = memoryCardsSlice.actions;

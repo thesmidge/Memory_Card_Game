@@ -1,11 +1,13 @@
-import { memo, useState } from 'react';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Container, Row, Col } from 'reactstrap';
 import MemoryCard from '../memoryCards/MemoryCard';
-import _ from 'lodash';
+// import _ from 'lodash';
 
 const GameBoard = ({ memoryCardIndexArray }) => {
-    
+    // const [flippedCards, setFlippedCards] = useState([]);
+    // const [matchedCards, setMatchedCards] = useState([]);
+
     return (
         <Container>
             <h1>Some Title</h1>
@@ -13,7 +15,10 @@ const GameBoard = ({ memoryCardIndexArray }) => {
                 {memoryCardIndexArray.map((cardIndex, idx) => {
                     return (
                         <Col key={idx}>
-                            <MemoryCard index={cardIndex} />
+                            <MemoryCard
+                                index={cardIndex}
+                                // onFlip={(memoryCard) => {setFlippedCards(flippedCards.concat(...memoryCard)); console.log(flippedCards)}}
+                            />
                         </Col>
                     );
                 })}
