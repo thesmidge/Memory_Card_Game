@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+import _ from 'lodash';
 
 // When I implement a back end, I think I will need to create a fetchAPI Thunk for building the memory card deck, or at least for fetching individual card data
 
 const initialState = {
     flippedCards: [],
     matchedCards: [],
-    // memoryCardsArray: [],
+    memoryCardsArray: [],
     // difficultyLevel?
     errorMessage: ''
 };
@@ -14,6 +15,15 @@ const memoryCardsSlice = createSlice({
     name: 'memoryCards',
     initialState,
     reducers: {
+        shuffleMemoryCards: (state, action) => {
+            const cardIndexArray = [0, 1, 2 , 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
+            const shuffledCardIndexArray = _.shuffle(cardIndexArray);
+            const truncatedCardIndexArray = shuffledCardIndexArray.splice(0, 10);
+            const duplicatedIndexArray = truncatedCardIndexArray.concat(
+                truncatedCardIndexArray
+            );
+            state.memoryCardsArray = _.shuffle(duplicatedIndexArray);
+        },
         addFlippedCard: (state, action) => {
             const flippedCard = action.payload;
             state.flippedCards.push(flippedCard);
@@ -31,6 +41,7 @@ const memoryCardsSlice = createSlice({
 
 export const memoryCardsReducer = memoryCardsSlice.reducer;
 
+export const { shuffleMemoryCards } = memoryCardsSlice.actions;
 export const { addFlippedCard } = memoryCardsSlice.actions;
 export const { clearFlippedCards } = memoryCardsSlice.actions;
 export const { addMatchedCard } = memoryCardsSlice.actions;

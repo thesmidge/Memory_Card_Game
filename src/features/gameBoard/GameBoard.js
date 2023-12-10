@@ -2,11 +2,9 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Container, Row, Col } from 'reactstrap';
 import MemoryCard from '../memoryCards/MemoryCard';
-// import _ from 'lodash';
 
-const GameBoard = ({ memoryCardIndexArray }) => {
-    // const [flippedCards, setFlippedCards] = useState([]);
-    // const [matchedCards, setMatchedCards] = useState([]);
+const GameBoard = () => {
+    const memoryCardIndexArray = useSelector((state) => state.memoryCards.memoryCardsArray);
 
     return (
         <Container>
@@ -17,7 +15,7 @@ const GameBoard = ({ memoryCardIndexArray }) => {
                         <Col key={idx}>
                             <MemoryCard
                                 index={cardIndex}
-                                // onFlip={(memoryCard) => {setFlippedCards(flippedCards.concat(...memoryCard)); console.log(flippedCards)}}
+                                colKey={idx}
                             />
                         </Col>
                     );

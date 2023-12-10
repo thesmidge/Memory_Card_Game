@@ -6,7 +6,7 @@ import CardBack from './CardBack';
 import CardImage from './CardImage';
 import { addFlippedCard, addMatchedCard, clearFlippedCards } from './memoryCardsSlice';
 
-const MemoryCard = ({ index }) => {
+const MemoryCard = ({ index, colKey }) => {
     const [cardFlipped, setCardFlipped] = useState(false);
     const [cardMatched, setCardMatched] = useState(false);
     const cat = useSelector((state) => state.cats.catsArray[index]);
@@ -25,6 +25,8 @@ const MemoryCard = ({ index }) => {
         // If cards do not match, reset "cardFlipped" to false for both cards
         // No matter the result, clear the "flippedCards" array
     };
+
+    console.log(`MemoryCard ${colKey} rendered`);
 
     if (cardMatched) {
         return <BlankSpace />;
