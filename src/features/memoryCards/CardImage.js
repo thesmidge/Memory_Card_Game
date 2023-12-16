@@ -1,7 +1,8 @@
 import '../../App.css';
+import { useFetchImage } from '../../hooks/useFetchImage';
 
 const CardImage = (props) => {
-    const imgurl = props.url;
+    const imgurl = useFetchImage('cat', props);
 
     return (
         <div className='cardImage'>

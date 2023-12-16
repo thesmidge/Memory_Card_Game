@@ -5,6 +5,10 @@ import MemoryCard from '../memoryCards/MemoryCard';
 
 const GameBoard = () => {
     const memoryCardIndexArray = useSelector((state) => state.memoryCards.memoryCardsArray);
+    const catImageUrls = useSelector((state) => state.cats.catImagesArray);
+
+    console.log('GameBoard rendered');
+    console.log(catImageUrls);
 
     return (
         <Container>

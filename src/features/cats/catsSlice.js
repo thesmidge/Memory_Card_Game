@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { CATS } from '../../app/shared/CATS';
 import { baseCatUrl } from '../../app/shared/baseUrls';
+import { useFetchImage } from '../../hooks/useFetchImage';
 
 /* This catsSlice will probably become solely for the purpose of fetching my cat data from the backend, assuming I can successfully create one. Otherwise, it will basically be for managing the state of my locally stored catsArray.
 
@@ -48,7 +49,7 @@ I'll need to create a custom hook (stored in a hooks folder?) for my API fetch. 
 
 const initialState = {
     catsArray: CATS, // Plan to implement backend similar to json-server used for nucampsite, if possible
-    // catImagesArray: [],
+    catImagesArray: [],
     isLoading: true,
     errorMessage: ''
 };
@@ -56,7 +57,14 @@ const initialState = {
 const catsSlice = createSlice({
     name: 'cats',
     initialState,
-    reducers: {},
+    reducers: {
+        fetchCatImages: (state) => {
+            for (let cat of state.catImagesArray) {
+                const catImage = useFetchImage('cat', cat);
+                state.catImagesArray.push(catImage);
+            }
+        }
+    },
     // extraReducers: {
     //     [fetchCatImage.pending]: (state) => {
     //         state.isLoading = true;
@@ -74,3 +82,5 @@ const catsSlice = createSlice({
 });
 
 export const catsReducer = catsSlice.reducer;
+
+export const { fetchCatImages } = catsSlice.actions;
